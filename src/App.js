@@ -1,13 +1,14 @@
+import AppForm from './components/AppForm';
 import logo from './logo.svg';
 //import './App.css';
 import C01componente from './pagina/C01componente';
 
 function App() {
   return (
-    <div >
-      <C01componente/>
-      Hola mundo desde react
-      <i class="medium material-icons">insert_chart</i>
+    <div style ={{width:"350px",background:"greenyellow",padding:"10px"}}>
+      <AppForm />
+      <p>No. 1 Juan Manuel          x        A</p>
+      <p>No. 1 Rosa Maria           x        A</p>
     </div>
   );
 }
