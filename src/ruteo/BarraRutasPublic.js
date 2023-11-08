@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Home from '../public/Home';
 import Dashboard from '../public/Dashboard';
 import LoginForm from '../login/LoginForm';
+import informacion from '../public/informacion';
 
 const BarraRutasPublic = () => {
     const { user } = useAuth();
@@ -34,7 +35,7 @@ const BarraRutasPublic = () => {
           <div id="menu">
             <ul>
             <li><Link to="/">Noticias </Link> </li>
-             <li><Link to="/">Informacion</Link> </li>
+             <li><Link to="/">informacion</Link> </li>
               <li><Link to="/">Portada(Dashboard)</Link> </li>
               <li><Link to="/home">Home</Link> </li>
             </ul>
