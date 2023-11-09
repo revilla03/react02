@@ -4,7 +4,7 @@ const Documentos = () => {
   return (
     <div id='file'>
       <h1>Documentos</h1>
-      Página para documentos...
+      Página para documentos en el instituto
     </div>
   )
 }

@@ -8,11 +8,11 @@ import BarraRutasPublic from "./ruteo/BarraRutasPublic";
 const App = () => {
   const { user }= useAuth();
   return(
-    <div style={{background:"green"}}> 
+    <div style={{background:"orange"}}> 
     <h1>App.js</h1>
     <Router>
       {
-        user?<BarraRutasPublic/>:<BarraRutasPublic/>
+        user?<BarraRutasPublic/>:<BarraRutasProtected/>
       }
      
      </Router>

@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 
 const App = () => {
   return(
-    <div style={{background:"violet"}}>
+    <div style={{background:"green"}}>
       <h1>App.js</h1>
       {/*<Router>
         <BarraNavegacion></BarraNavegacion>
