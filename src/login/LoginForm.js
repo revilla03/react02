@@ -21,7 +21,7 @@ function LoginForm() {
     }
     try {
       await signIn(email, password);
-      //Inicio de sesión exitoso: limpiar el error
+      //Inicio de sesión exitoso: limpiar el error jsjsjs
       setError(null);
       navigate('/sistema-crud'); // Redirigir a ruta /sistema-crud
     } catch (error) {
