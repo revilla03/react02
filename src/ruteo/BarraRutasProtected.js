@@ -26,6 +26,9 @@ import Docpdf from '../protegido/sistemafile/Docpdf';
 import Videos from '../protegido/sistemafile/Videos';
 import ListaDeportes from '../protegido/sistemacrud/ListaDeportes';
 
+
+
+
 const BarraRutasProtected = () => {
     const { user } = useAuth();
     const auth = getAuth();
@@ -55,8 +58,12 @@ const BarraRutasProtected = () => {
           <div id="login">
             <ul>
               <li><Link to="/nuevoregistro">Registrar</Link></li>
-                <li><Link onClick={handleSignOut} > Cerrar sesión </Link> </li> 
-            
+              {user ? (         ////////  Usuario autenticado  ///////////
+                <li>Usuario autenticado: <span> {user.email}</span> </li> 
+                ) : (
+                null
+              )}
+                <li><Link onClick={handleSignOut} > Cerrar sesión </Link> </li>             
               
   
             </ul>
@@ -64,17 +71,21 @@ const BarraRutasProtected = () => {
               
           <div id="menu">
             <ul>
-              <li><Link to="/sistema-crud/applista">Alumnos(applista)</Link> </li>
-              <li><Link to="/sistema-crud/profesores">Profesores</Link> </li>
-              <li><Link to="/sistema-crud/deportes">deportes</Link> </li>
-              
-              <li><Link to="/sistema-crud/carreras">carreras</Link> </li>
+              <li><Link to="/sistema-crud/carreras">CARRERAS</Link> </li>
+              <li><Link to="/sistema-crud/deportes">DEPORTES</Link> </li>
+      
+              <li><Link to="/sistema-crud/applista">ALUMNOS(applista)</Link> </li>
+              <li><Link to="/sistema-crud/profesores">PROFESORES</Link> </li>
           
-                      
-              <li><Link to="/sistema-file/fotos">Galeria de Fotos</Link> </li>
-              <li><Link to="/sistema-file/docword">Doc. Word</Link> </li>
-              <li><Link to="/sistema-file/docpdf">Doc.PDF</Link> </li>
-              <li><Link to="/sistema-file/videos">VIDEOS</Link> </li>
+     
+             
+          
+              <li><Link to="/sistema-file/videos">VIDEOS</Link> </li>       
+              <li><Link to="/sistema-file/fotos"> FOTOS</Link> </li>
+              <li><Link to="/sistema-file/docpdf">PDF</Link> </li>
+              <li><Link to="/sistema-file/docword">WORD</Link> </li>
+              
+          
             </ul>
           </div>
         </nav>
@@ -90,7 +101,10 @@ const BarraRutasProtected = () => {
             <Route path="applista" element={<AppLista />} />
             <Route path="profesores" element={<ListaDeProfesores />} />
             <Route path="deportes" element={<ListaDeportes />} />
-            <Route path="carreras" element={<ListaDeCarreras />} />
+            
+            
+          
+     
             
          
           </Route>

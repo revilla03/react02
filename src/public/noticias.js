@@ -1,9 +1,12 @@
 import React from 'react'
 
-const noticias = () => {
+const Noticias= () => {
   return (
-    <div>noticias</div>
+    <div id="public">
+      <h1>Noticias</h1>
+      <p>Noticias.</p>
+    </div>
   )
 }
 
-export default noticias
+export default  Noticias

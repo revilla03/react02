@@ -1,9 +1,12 @@
 import React from 'react'
 
-const informacion = () => {
+const Informacion= () => {
   return (
-    <div>Informacion</div>
+    <div id="public">
+      <h1>Informacion</h1>
+      <p>Aqui tenemos informacion</p>
+    </div>
   )
 }
 
-export default informacion
+export default  Informacion
