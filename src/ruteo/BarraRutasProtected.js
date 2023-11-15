@@ -101,6 +101,7 @@ const BarraRutasProtected = () => {
             <Route path="applista" element={<AppLista />} />
             <Route path="profesores" element={<ListaDeProfesores />} />
             <Route path="deportes" element={<ListaDeportes />} />
+            <Route path="carreras" element={<ListaDeCarreras/>} />
             
             
           

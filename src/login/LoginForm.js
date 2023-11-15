@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useAuth } from '../ruteo/AuthContext'; // (7). Importando contexto
 import { useNavigate } from 'react-router-dom';
 
+import "react-toastify/dist/ReactToastify.css";           // Para estilos
+import { ToastContainer, toast } from "react-toastify";   // Para contenedor y diseño
+
 function LoginForm() {
   
   const { signIn } = useAuth();                 // (7). Usando el contexto
@@ -12,6 +15,7 @@ function LoginForm() {
   
   const navigate = useNavigate();
 
+
   const handleSignIn = async (e) => {
     e.preventDefault();
 
@@ -19,9 +23,10 @@ function LoginForm() {
       setError('Por favor, completa ambos campos.');
       return;
     }
+
     try {
       await signIn(email, password);
-      //Inicio de sesión exitoso: limpiar el error jsjsjs
+      // Inicio de sesión exitoso: limpiar el error
       setError(null);
       navigate('/sistema-crud'); // Redirigir a ruta /sistema-crud
     } catch (error) {
@@ -30,23 +35,47 @@ function LoginForm() {
   }
 
 
-
   return (
-    <div id='public'>
-      <h2>Iniciar Sesión ok </h2>
-      <form onSubmit={handleSignIn}>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+    <div className='container text-center'>
+      <div className='card bs-secondary p-3 mt-3'>
+        
+        <ToastContainer/>
+
+        <div className='col-md-12 p-2'>
+          <div className='card mb-1'>
+            <h2>Iniciar Sesión</h2>
+          </div>
         </div>
-        <div>
-          <label>Contraseña:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+        <form className='card card-body' onSubmit={handleSignIn}>
+
+        <div className='form-group input-group'>
+          <div className='input-group-text bd-light'>
+            <i className='material-icons'>contact_mail</i>
+          </div>
+          <input className='form-control float-start' value={email} type="email" placeholder='Email'  
+            onChange={(e) => setEmail(e.target.value)} />
         </div>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <button type="submit">Iniciar Sesión</button>
-      </form>
+        
+        <div className='form-group input-group'>
+          <div className='input-group-text bd-light'>
+            <i className='material-icons'>lock</i>
+          </div>
+          <input className='form-control float-start' value={password} type="password" placeholder='Contraseña'  
+            onChange={(e) => setPassword(e.target.value)} />
+        </div>
+
+          
+        <button className='btn btn-primary btn-block' type="submit">
+          Iniciar Sesión
+        </button>
+
+        </form>
+
+      </div>
     </div>
+
   );
 }
 

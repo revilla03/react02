@@ -12,7 +12,7 @@ const App = () => {
     <h1>App.js</h1>
     <Router>
       {
-        user?<BarraRutasPublic/>:<BarraRutasProtected/>
+        user?<BarraRutasProtected/>:<BarraRutasPublic/>
       }
      
      </Router>

@@ -34,7 +34,7 @@ const BarraRutasPublic = () => {
   }
   
     return (
-      <div style={{ background:"greenyellow", }}>
+      <div style={{ background:"violet", }}>
         <nav>
           <div id="login">
             <ul>
@@ -49,8 +49,8 @@ const BarraRutasPublic = () => {
             <ul>
             <li><Link to="/home">Home</Link> </li>
             <li><Link to="/informacion">Informacion</Link> </li>
-            <li><Link to="/noticias">Noticias </Link> </li>
-            <li><Link to="/contacto">Contacto </Link> </li>
+            <li><Link to="/Noticias">Noticias </Link> </li>
+            <li><Link to="/Contacto">Contacto </Link> </li>
             <li><Link to="/Dashboard">Portada(Dashboard)</Link> </li>
              
             </ul>
@@ -61,8 +61,8 @@ const BarraRutasPublic = () => {
           <Route path="/iniciarsesion" element={<LoginForm/>} />
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/noticias" element={<Noticias/>} />
-          <Route path="/contacto" element={<Contacto/>} />
+          <Route path="/Noticias" element={<Noticias/>} />
+          <Route path="/Contacto" element={<Contacto/>} />
           <Route path="/informacion" element={<Informacion/>} />
           
 
